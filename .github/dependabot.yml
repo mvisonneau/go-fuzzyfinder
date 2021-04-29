@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: gomod
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - ktr0731
+  labels:
+  - dependency
+  ignore:
+  - dependency-name: github.com/mattn/go-runewidth
+    versions:
+    - 0.0.10
+  - dependency-name: github.com/google/go-cmp
+    versions:
+    - 0.5.4
