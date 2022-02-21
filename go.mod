@@ -1,10 +1,11 @@
 module github.com/ktr0731/go-fuzzyfinder
 
 require (
+	cloud.google.com/go/kms v1.3.0 // indirect
 	github.com/Songmu/gocredits v0.2.0
 	github.com/gdamore/tcell/v2 v2.4.0
-	github.com/golangci/golangci-lint v1.41.1
-	github.com/google/go-cmp v0.5.6
+	github.com/golangci/golangci-lint v1.44.2
+	github.com/google/go-cmp v0.5.7
 	github.com/google/gofuzz v1.2.0
 	github.com/goreleaser/goreleaser v0.174.2
 	github.com/mattn/go-runewidth v0.0.13
