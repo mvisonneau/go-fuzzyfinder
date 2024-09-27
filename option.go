@@ -17,6 +17,7 @@ type opt struct {
 	context       context.Context
 	query         string
 	selectOne     bool
+	defaultIndex  int
 }
 
 type mode int
@@ -35,6 +36,7 @@ const (
 var defaultOption = opt{
 	promptString:  "> ",
 	hotReloadLock: &sync.Mutex{}, // this won't resolve the race condition but avoid nil panic
+	defaultIndex:  -1,
 }
 
 // Option represents available fuzzy-finding options.
@@ -106,6 +108,13 @@ func WithCursorPosition(position cursorPosition) Option {
 func WithPromptString(s string) Option {
 	return func(o *opt) {
 		o.promptString = s
+	}
+}
+
+// WithDefaultIndex initiate the finder with a default value in the slice.
+func WithDefaultIndex(i int) Option {
+	return func(o *opt) {
+		o.defaultIndex = i
 	}
 }
 
